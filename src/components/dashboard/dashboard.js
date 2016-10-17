@@ -39,7 +39,7 @@ export default class Dashboard extends Component {
     return (
       <View style={ styles.container }>
         <StatusBar
-          backgroundColor="blue"
+          backgroundColor="#63c9d7"
           barStyle="light-content"
           />
         <View style={ styles.header }>
@@ -141,13 +141,13 @@ const styles = StyleSheet.create({
     fontSize: 18
   },
   panel: {
-    flex: 12,
+    flex: 10,
     justifyContent: 'space-around',
     alignItems: 'center',
     flexDirection: 'row',
   },
   capture: {
-    flex: 7,
+    flex: 9,
     justifyContent: 'center',
     alignItems: 'center'
   },
