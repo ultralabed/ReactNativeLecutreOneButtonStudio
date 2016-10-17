@@ -6,7 +6,7 @@ import {
   Image,
   TouchableHighlight
 } from 'react-native';
-import API from '../api.js';
+import API from '../../api.js';
 
 const AGENTSTATE = {
   ONLINE: 'Online',
@@ -123,8 +123,6 @@ export default class Panel extends Component {
     })
   }
 }
-
-
 
 const styles = StyleSheet.create({
   container: {

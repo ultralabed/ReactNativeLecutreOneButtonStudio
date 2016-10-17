@@ -9,7 +9,7 @@ import {
   Image,
   Dimensions
 } from 'react-native';
-import Panel from '../panel';
+import Panel from '../panel/panel';
 import QRCodeScreen from '../qrCodeScreen/qrCodeScreen';
 import API from '../../api.js';
 
