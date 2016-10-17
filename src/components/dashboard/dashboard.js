@@ -58,7 +58,8 @@ export default class Dashboard extends Component {
             agentTheme={ this.state.agentTheme } 
             serverUrl={ this.state.serverUrl }
             agentID={ this.state.agentID }
-            agentState={ this.state.agentState }/>
+            agentState={ this.state.agentState }
+            onPanelButtonClickSuccess={ this.handlePanelButtonClickSuccess.bind(this) }/>
         </View>
         <View style={ styles.capture }>
           <TouchableHighlight 
@@ -81,6 +82,10 @@ export default class Dashboard extends Component {
           onSucess: this.onQrSucess.bind(this),
         }
       });
+  }
+
+  handlePanelButtonClickSuccess() {
+    this.getAgentState();
   }
 
   onQrSucess(result) {
@@ -106,6 +111,7 @@ export default class Dashboard extends Component {
   }
 
   getAgentState() {
+    console.log('getAgentState');
     let agentSearchByIdUrl = `http://${this.state.serverUrl}/${API.agentSearchById}?id=${this.state.agentID}`;
     fetch(agentSearchByIdUrl).then((response) => {
       return response.json();

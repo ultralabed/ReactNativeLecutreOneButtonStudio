@@ -92,6 +92,7 @@ export default class Panel extends Component {
     fetch(url).then((response) => {
       return response.json();
     }).then((json) => {
+      this.props.onPanelButtonClickSuccess();
     })
   }
 
@@ -100,6 +101,7 @@ export default class Panel extends Component {
     fetch(url).then((response) => {
       return response.json();
     }).then((json) => {
+      this.props.onPanelButtonClickSuccess();
     })
   }
 
@@ -108,6 +110,7 @@ export default class Panel extends Component {
     fetch(url).then((response) => {
       return response.json();
     }).then((json) => {
+      this.props.onPanelButtonClickSuccess();
     })
   }
 
@@ -116,6 +119,7 @@ export default class Panel extends Component {
     fetch(url).then((response) => {
       return response.json();
     }).then((json) => {
+      this.props.onPanelButtonClickSuccess();
     })
   }
 }
