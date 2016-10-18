@@ -1,5 +1,6 @@
 module.exports = {
   changeScenesById: 'lecture/api/Scenes/changeScenesById',
+  changeScenesByCpCS4: 'lecture/api/controlCPCS4/changeScenesById',
   agentSearchById: 'lecture/api/Search/agentSearchById',
   startCaptureById: 'lecture/api/Command/startCaptureById',
   stopCaptureById: 'lecture/api/Command/stopCaptureById',

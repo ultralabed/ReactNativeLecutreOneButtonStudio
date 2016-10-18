@@ -22,7 +22,8 @@ export default class Dashboard extends Component {
       agentTheme: '無錄播場景',
       agentThemeId: '',
       agentState: '無錄播狀態',
-      agentName: ''
+      agentName: '',
+      cpIP: ''
     }
     setInterval(() => {
       if (this.state.agentID) {
@@ -94,19 +95,20 @@ export default class Dashboard extends Component {
         serverUrl: result.serverUrl,
         agentID: result.id,
         agentTheme: result.scenesName,
-        agentThemeId: result.scenesNum
+        agentThemeId: result.scenesNum,
+        cpIP: result.cpIP
       });
-      this.setTheme();
+      this.setThemeByCp();
       this.getAgentState();
     }
   }
 
-  setTheme() {
-    let changeScenesByIdUrl = `http://${this.state.serverUrl}/${API.changeScenesById}?id=${this.state.agentID}&scenesNum=${this.state.agentThemeId}`;
-    fetch(changeScenesByIdUrl).then((response) => {
+  setThemeByCp() {
+    let changeScenesByCpCS4Url = `http://${this.state.serverUrl}/${API.changeScenesByCpCS4}?cpIP=${this.state.cpIP}&scenesNum=${this.state.agentThemeId}`;
+    fetch(changeScenesByCpCS4Url).then((response) => {
       return response.json();
     }).then((json) => {
-      console.log('changeScenesByIdUrl', json);
+      console.log('changeScenesByCpCS4Url', json);
     })
   }
 
