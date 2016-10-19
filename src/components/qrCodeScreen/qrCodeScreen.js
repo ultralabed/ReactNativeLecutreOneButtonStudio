@@ -8,11 +8,11 @@ import {
 } from 'react-native';
 import Button from '../../common/button';
 import Camera from 'react-native-camera';
+import Base64 from '../../common/base64Decode';
 
 export default class QrCodeScreen extends Component {
   constructor(props) {
     super(props)
-    console.log(props)
   }
 
   render() {
@@ -34,10 +34,17 @@ export default class QrCodeScreen extends Component {
   }
 
   onBarCodeRead(result) {
-    if (this.barCodeFlag) {
+     if (this.barCodeFlag) {
+      // Start Base 64 process
+      let unshiftResult = Base64.decode(result.data, Base64.keyString);
+      let decodeResult = Base64.utf8_decode(unshiftResult);
+      console.log('decodeResult type', typeof decodeResult);
+      // End Base 63 process
+
       this.barCodeFlag = false;
       this.props.navigator.pop();
-      this.props.onSucess(JSON.parse(result.data));
+      alert(decodeResult);
+      this.props.onSucess(JSON.parse(decodeResult));
     }
   }
 
